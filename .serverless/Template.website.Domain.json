@@ -1,0 +1,12 @@
+{
+  "region": "us-east-1",
+  "privateZone": false,
+  "domain": "sledbank.com",
+  "subdomains": [
+    {
+      "domain": "www.sledbank.com",
+      "type": "awsS3Website",
+      "s3BucketName": "gjmorbw-32ep5h"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+name: rock-paper-cygni
+
+website:
+  component: '@serverless/website'
+  inputs:
+    code:
+      src: build
+      hook: npm run build
+    region: eu-central-1
+    bucketName: rockPaperCygni
+    domain: www.sledbank.com

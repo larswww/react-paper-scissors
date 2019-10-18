@@ -14,6 +14,7 @@ const Weapon = (props) => {
 }
 
 class LocalPlayer extends React.Component {
+
   state = {
     move: '',
     name: ''
@@ -155,7 +156,7 @@ class ExistingGame extends React.Component {
   getGame = async (id) => {
     let { data } = await axios({
       method: 'get',
-      url: `http://localhost:3001/api/games/${id}`,
+      url: `http://localhost:4000/v1/games/${id}`,
     })
 
     if (data.game) data = data.game
@@ -166,7 +167,7 @@ class ExistingGame extends React.Component {
     this.setState({ isLoading: true })
     const { data } = await axios({
       method: 'put',
-      url: `http://localhost:3001/api/games/${this.state.game.id}/move`,
+      url: `http://localhost:4000/v1/games/${this.state.game.id}/move`,
       data: { name, move }
     })
 
@@ -214,7 +215,7 @@ class CreateGame extends React.Component {
   postMove = async ({ name, move }) => {
     let { data } = await axios({
       method: 'post',
-      url: 'http://localhost:3001/api/games',
+      url: 'http://localhost:4000/v1/games',
       data: {
         name, move
       },
